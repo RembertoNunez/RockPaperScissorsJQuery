@@ -2,45 +2,72 @@
 	<head>
 		<title>Rock Paper Scissors</title>
 		<link rel="stylesheet" type="text/css" href="rps.css">
-		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
- 		<script language="javascript" type="text/javascript" src="rps.js"></script>
+		<script language="javascript" type="text/javascript" src="rps.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				init();
+				
+				$("#btnGo").click(function() {
+					go();
+				});
+				
+				$("#btnRock").click(function() {
+					select('rock');
+				});
+				
+				$("#btnPaper").click(function() {
+				    select('paper');
+				});
+				
+				$("#btnScissors").click(function() {
+				    select('scissors');
+				});
+				
+				$("#btnStart").click(function() {
+				    startGame();
+				});
+				
+				$("#btnReplay").click(function() {
+				    replay();
+				});
+				
+			});
+		</script>
 	</head>
-	<body onload="init()">
+	<body>
 		<div id="gameWindow">
 			
 			<div id="introScreen">
 				<div id="introScreenContent">
 					<h1>Rock Paper Scissors</h1>
-					<div id="btnStart" class="button" onclick="startGame()">Start Game</div>
+					<div id="btnStart" class="button">Start Game</div>
 				</div>
 			</div>
 			
 			<div id="endScreen">
 				<div id="endScreenContent">
-					<h1 id="txtEndTitle">Something beats Something</h1>
+					<h2 id="txtEndTitle">Something beats Something</h2>
 					<h2 id="txtEndMessage">You Win, Lose, or Tie</h2>
-					<div id="btnReplay" class="button" onclick="replay()">Play Again</div>
+					<div id="btnReplay" class="button">Play Again</div>
 				</div>
 			</div>
 			
-			<div id="btnGo" onclick="go()">GO</div>
-			
+			<div id="btnGo">GO</div>
+
 			<div id="playerPanel">
 				<h2>Player</h2>
 				<img id="imgPlayer" src="images/question.png">
 				<br><br>
-				<div id="btnRock" class="iconButton" onclick="select('rock')">
+				<div id="btnRock" class="iconButton">
 					<img src="images/rock.png">
 					<br>Rock
 				</div>
-				<div id="btnPaper" class="iconButton" onclick="select('paper')">
+				<div id="btnPaper" class="iconButton">
 					<img src="images/paper.png">
 					<br>Paper
 				</div>
-				<div id="btnScissors" class="iconButton" onclick="select('scissors')">
+				<div id="btnScissors" class="iconButton">
 					<img src="images/scissors.png">
 					<br>Scissors
 				</div>
@@ -63,9 +90,7 @@
 					<br>Scissors
 				</div>
 			</div>
-
 			
 		</div>
 	</body>
 </html>
-
